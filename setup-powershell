@@ -1,0 +1,34 @@
+$ New-Item -Type file -Path $PROFILE -Force
+$ notepad $PROFILE
+
+function Get-GitStatus { & git status $args }
+function Get-NpmInstall { & npm i $args }
+function Get-NpmUninstall { & npm uninstall $args }
+function Get-GitPush { & git push $args }
+function Get-GitPull { & git pull }
+function Get-GitCheckoutDevelop { & git checkout develop }
+function Get-GitCheckout { & checkout $args }
+function Get-GitRebaseDevelop { & git rebase develop }
+function Get-GitCi { & git ci -m "$args" }
+function Get-GitAddAll { & git add . }
+function Get-GitHist { & git hist }
+function Get-GitMerge { & git merge $args }
+
+New-Alias -Name s -Value Get-GitStatus
+New-Alias -Name i -Value Get-NpmInstall
+New-Alias -Name u -Value Get-NpmUninstall
+New-Alias -Name push -Value Get-GitPush
+New-Alias -Name pull -Value Get-GitPull
+New-Alias -Name cod -Value Get-GitCheckoutDevelop
+New-Alias -Name co -Value Get-GitCheckout
+New-Alias -Name rdev -Value Get-GitRebaseDevelop
+New-Alias -Name ci -Value Get-GitCi
+New-Alias -Name . -Value Get-GitAddAll
+New-Alias -Name hist -Value Get-GitHist
+New-Alias -Name m -Value Get-GitMerge
+
+$ set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+$ Get-ExecutionPolicy
+$ Get-ExecutionPolicy -list
+
+Settings -> Tools -> Terminal -> Shell Path add -nologo to the end
