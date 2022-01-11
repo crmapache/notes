@@ -1,0 +1,11 @@
+https://medium.com/fbdevclagos/using-zsh-aliases-for-better-terminal-experience-6f16f261ad52
+
+open -t ~/.zshrc
+
+alias i="npm install"
+alias u="npm uninstall"
+alias .="git add ."
+alias ci="f() { echo git commit -m "$1" };f"
+alias push="git push"
+alias pull="git pull"
+alias s="git status"
